@@ -34,6 +34,7 @@ class Format(Enum):
     IGES = 'igs'
     SAT = 'sat'
     SMT = 'smt'
+    TMF = '3mf'  # must start with letter
 
 FormatFromName = {x.value: x for x in Format}
 
@@ -182,6 +183,8 @@ def export_file(ctx: Ctx, format: Format, file, doc: LazyDocument) -> Counter:
         options = em.createFusionArchiveExportOptions(str(output_path))
     elif format == Format.STL:
         options = em.createSTLExportOptions(design.rootComponent, str(output_path))
+    elif format == Format.TMF:
+        options = em.createC3MFExportOptions(design.rootComponent, str(output_path))
     elif format == Format.STEP:
         options = em.createSTEPExportOptions(str(output_path))
     elif format == Format.IGES:
