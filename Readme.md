@@ -1,4 +1,4 @@
-This is a Fusion 360 Script to bulk export your files. Currently will export `f3d` files to `f3d`, `igs`, `stp`, `smt`, `sat`, `3mf` and `stl`. Can export drawings to `dxf`.
+This is a Fusion 360 Script to bulk export your files. Currently will export `f3d` files to `f3d`, `igs`, `stp`, `smt`, `sat`, `3mf` and `stl`. Can export drawings to `dxf`.  This version defaults to no projects selected and output format 3mf.
 
 # Installation
 
