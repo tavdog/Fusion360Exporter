@@ -38,7 +38,7 @@ class Format(Enum):
 
 FormatFromName = {x.value: x for x in Format}
 
-DEFAULT_SELECTED_FORMATS = {Format.F3D, Format.STEP}
+DEFAULT_SELECTED_FORMATS = {Format.TMF}
 
 class Ctx(NamedTuple):
     folder: Path
@@ -283,7 +283,7 @@ class ExporterCommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
 
             drop = inputs.addDropDownCommandInput('projects', 'Export Projects', adsk.core.DropDownStyles.CheckBoxDropDownStyle)
             for project in adsk.core.Application.get().data.dataProjects:
-                drop.listItems.add(project.name, True)
+                drop.listItems.add(project.name, False)
 
             inputs.addBoolValueInput('unhide_all', 'Unhide All Bodies', True, '', True)
             inputs.addBoolValueInput('save_sketches', 'Save Sketches as DXF', True, '', False)
